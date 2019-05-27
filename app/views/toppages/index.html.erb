@@ -1,0 +1,32 @@
+<div>
+    <p>英語の勉強に発音記号は不可欠！</p>
+    <p>早速調べよう！</p>
+
+    <form>
+        <div class="form-group ">
+            英単語を入力しよう
+            <input type="text" class="form-controll">
+        </div>
+    </form>
+    
+    <button class="btn btn-primary" type="submit">検索</button>
+    
+    <% if logged_in %>
+        <p>英語学習頑張って</p>
+    <% else %>
+        <p>会員登録をすると以下のことができるようになります</p>
+        <p> 英単語・発音記号を保存する</p>
+        <p> 保存したファイルの閲覧</p>
+        <p>会員登録は無料でできます</p>
+        <p>ログインボタンから会員登録をしよう</p>
+        <div class="form-group row">
+            <label class="col-sm-2">既に登録済の方→</label>
+            <div class="col-sm-10">
+               <%= link_to "ログイン", signup_path, class: "btn btn-lg btn-primary" %> 
+            </div>
+        
+        </div>
+    <% end %>
+</div>
+
+
