@@ -1,24 +1,23 @@
-<div>
+<div class="text-center">
     <p>英語の勉強に発音記号は不可欠！</p>
     <p>早速調べよう！</p>
+    <p>英単語を入力しよう</p>
 
-    <form>
-        <div class="form-group ">
-            英単語を入力しよう
-            <textarea class="form-control"></textarea>
-        </div>
-    </form>
+    <%= form_with(url: search_results_path, local: true, method: :get) do |f| %>
+        <%= text_field_tag :search_word %><br>
+        <%= f.submit "検索", class: "btn btn-primary" %>
+    <% end %>
+
     
-    <%= link_to "検索", seaching_path, class: "btn btn-lg btn-primary" %> 
     
     <% if logged_in? %>
         <p>英語学習頑張って</p>
     <% else %>
         <p>会員登録をすると以下のことができるようになります</p>
-        <p> 英単語・発音記号を保存する</p>
-        <p> 保存したファイルの閲覧</p>
-        <p>会員登録は無料でできます</p>
-        <p>ログインボタンから会員登録をしよう</p>
+        <p> 英単語・発音記号を保存する</p><br>
+        <p> 保存したファイルの閲覧</p><br>
+        <p>会員登録は無料でできます</p><br>
+        <p>会員登録ボタンから会員登録をしよう</p><br>
         <div class="form-group row">
             <label class="col-sm-2">こちらから→</label>
             <div class="col-sm-10">

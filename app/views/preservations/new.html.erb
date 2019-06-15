@@ -1,0 +1,23 @@
+<% if flash[:danger] %>
+  <div class="danger">
+    <%= flash[:danger] %>
+  </div>
+<% end  %>
+  <div>
+    <%= form_with(model: @preservation, local: true) do |f| %>
+      <%= f.label :title, 'タイトル' %>
+      <%= f.text_field :title %>
+    
+    <h3>保存する英単語：<%= @word %></h3>
+    <h3>保存する発音記号：<%= @signals %></h3>
+
+    <div class="text-center">
+      <%= f.submit '保存' %>
+    </div>
+  
+    <% end %>
+  </div>
+
+
+
+

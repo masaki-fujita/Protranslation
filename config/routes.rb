@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   delete "logout", to: "sessions#destroy"
   
   get "signup", to: "users#new"
-  resources :users, only: [:index,  :new, :create]
+  resources :users, only: [:new, :create]
   
-  get "seaching", to: "toppages#show"
+  get "search_results", to: "toppages#search_results"
+  
+  resources :preservations, only: [:index, :show, :new, :create]
 end

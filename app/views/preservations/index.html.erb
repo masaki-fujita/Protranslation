@@ -1,0 +1,17 @@
+<% if flash[:success] %>
+    <div class="success">
+        <%= flash[:success] %>
+    </div>
+<% end %>
+
+<ul class="list-unstyled">
+    <li>
+        <% @preservations.each do |preservation| %>
+            <div>
+                <p><%= link_to preservation.title, preservation %></p>
+            </div>
+        <% end %>
+    </li>
+</ul>
+
+
